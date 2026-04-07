@@ -1,5 +1,5 @@
 function pagina(){
-    // cria o título
+    // cria o ttulo
     const titulo = document.createElement("h2");
     titulo.textContent = "Lista de Tarefas";
 
@@ -9,7 +9,7 @@ function pagina(){
     input.id = "tarefaInput";
     input.placeholder = "Digite uma tarefa";
 
-    // cria o botão
+    // cria o botao
     const botao = document.createElement("button");
     botao.id = "btnAdicionar";
     botao.textContent = "Adicionar";
@@ -18,13 +18,12 @@ function pagina(){
     const lista = document.createElement("ul");
     lista.id = "listaTarefas";
 
-    // adiciona tudo no body
+    // adiciona no body
     document.body.appendChild(titulo);
     document.body.appendChild(input);
     document.body.appendChild(botao);
     document.body.appendChild(lista);
 
-    // ===== sua lógica original =====
     botao.addEventListener("click", () =>{
         const novaTarefa = document.createElement("li");  
         const texto = input.value.trim();
