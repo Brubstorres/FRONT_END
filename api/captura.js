@@ -24,9 +24,11 @@ navigator.mediaDevices.getUserMedia({ video: true })
     function enviarImagemParaServidor(imagemDataURL){
         console.log("Enviando imagem para o servidor...");
 
-        fetch("/", {
+        const base64String = imagemDataURL.split(',')[1];
+
+        fetch("http://DOP3080-1247456:8000/images", {
             method: "POST",
-            body: JSON.stringify({ imagem: imagemDataURL }),
+            body: JSON.stringify({ image: base64String, mime_type: "image/png" }),
             headers: {
                 "Content-Type": "application/json"
             }
